@@ -3,9 +3,9 @@ package cn.fanrunqi.materiallogin.a;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.view.View;
@@ -14,7 +14,7 @@ import android.view.animation.AccelerateInterpolator;
 
 import cn.fanrunqi.materiallogin.R;
 
-public class AActivityTwo extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private CardView cvAdd;
@@ -22,7 +22,7 @@ public class AActivityTwo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_activity_two);
+        setContentView(R.layout.activity_register);
         ShowEnterAnimation();
         initView();
         fab.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +102,7 @@ public class AActivityTwo extends AppCompatActivity {
                 cvAdd.setVisibility(View.INVISIBLE);
                 super.onAnimationEnd(animation);
                 fab.setImageResource(R.drawable.plus);
-                AActivityTwo.super.onBackPressed();
+                RegisterActivity.super.onBackPressed();
             }
 
             @Override

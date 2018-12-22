@@ -16,9 +16,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".a.AActivityOne"/>
+        <activity android:name=".a.LoginActivity"/>
         <activity
-            android:name=".a.AActivityTwo"
+            android:name=".a.RegisterActivity"
             android:theme="@style/Translucent" />
         <activity android:name=".a.AActivityThree" />
 

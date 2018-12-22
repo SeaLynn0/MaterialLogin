@@ -1,11 +1,11 @@
 package cn.fanrunqi.materiallogin;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import cn.fanrunqi.materiallogin.a.AActivityOne;
+import cn.fanrunqi.materiallogin.a.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void doEffectA(View v){
-            startActivity(new Intent(this, AActivityOne.class));
+    public void doEffectA(View v) {
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
 

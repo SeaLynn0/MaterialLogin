@@ -3,29 +3,30 @@ package cn.fanrunqi.materiallogin.a;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
+
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import android.transition.Explode;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import cn.fanrunqi.materiallogin.R;
 
-public class AActivityOne extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    private EditText etUsername;
-    private EditText etPassword;
-    private Button btGo;
+    private TextInputEditText etUsername;
+    private TextInputEditText etPassword;
+    private AppCompatButton btGo;
     private CardView cv;
     private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_activity_one);
+        setContentView(R.layout.activity_login);
         initView();
         setListener();
     }
@@ -47,8 +48,8 @@ public class AActivityOne extends AppCompatActivity {
 
                 getWindow().setExitTransition(explode);
                 getWindow().setEnterTransition(explode);
-                ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(AActivityOne.this);
-                Intent i2 = new Intent(AActivityOne.this,AActivityThree.class);
+                ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(LoginActivity.this);
+                Intent i2 = new Intent(LoginActivity.this,AActivityThree.class);
                 startActivity(i2, oc2.toBundle());
             }
         });
@@ -57,8 +58,8 @@ public class AActivityOne extends AppCompatActivity {
             public void onClick(View view) {
                 getWindow().setExitTransition(null);
                 getWindow().setEnterTransition(null);
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(AActivityOne.this, fab, fab.getTransitionName());
-                startActivity(new Intent(AActivityOne.this, AActivityTwo.class), options.toBundle());
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, fab, fab.getTransitionName());
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class), options.toBundle());
             }
         });
     }
